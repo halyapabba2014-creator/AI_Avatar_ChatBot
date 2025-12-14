@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Avatar Creator for Kids! 🎨✨</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="animated-background"></div>
+    
+    <div class="container">
+        <header>
+            <h1>🎨 Create Your AI Avatar! ✨</h1>
+            <p class="subtitle">Make a super cool avatar and let AI introduce you!</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Avatar Customization Section -->
+            <section class="customization-panel">
+                <h2>🎭 Customize Your Avatar</h2>
+                
+                <div class="form-group">
+                    <label for="avatarName">👤 Your Name:</label>
+                    <input type="text" id="avatarName" placeholder="Enter your name" maxlength="20">
+                </div>
+
+                <div class="form-group">
+                    <label for="avatarAge">🎂 Your Age:</label>
+                    <select id="avatarAge">
+                        <option value="">Select age</option>
+                        <option value="5">5 years old</option>
+                        <option value="6">6 years old</option>
+                        <option value="7">7 years old</option>
+                        <option value="8">8 years old</option>
+                        <option value="9">9 years old</option>
+                        <option value="10">10 years old</option>
+                        <option value="11">11 years old</option>
+                        <option value="12">12 years old</option>
+                        <option value="13">13 years old</option>
+                        <option value="14">14 years old</option>
+                        <option value="15">15 years old</option>
+                        <option value="16">16 years old</option>
+                        <option value="17">17 years old</option>
+                        <option value="18">18 years old</option>
+                        <option value="19">19 years old</option>
+                        <option value="20">20 years old</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>🤖 Avatar Style:</label>
+                    <div class="avatar-styles">
+                        <button class="style-btn active" data-style="robot">🤖 Robot</button>
+                        <button class="style-btn" data-style="animal">🐱 Animal</button>
+                        <button class="style-btn" data-style="superhero">🦸 Superhero</button>
+                        <button class="style-btn" data-style="alien">👽 Alien</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="avatarColor">🎨 Background Color:</label>
+                    <input type="color" id="avatarColor" value="#FF6B9D">
+                </div>
+
+                <div class="form-group">
+                    <label for="customIntroduction">✍️ Or Type Your Own Introduction:</label>
+                    <textarea id="customIntroduction" placeholder="Type your introduction here... (optional)" rows="4"></textarea>
+                </div>
+
+                <div class="speech-recognition-section">
+                    <button id="recordBtn" class="action-btn primary speech-btn">
+                        🎤 Record Your Introduction
+                    </button>
+                    <div id="recordingStatus" class="recording-status" style="display: none;">
+                        <span class="recording-indicator">🔴</span>
+                        <span>Recording... Speak now!</span>
+                    </div>
+                </div>
+
+                <button id="generateBtn" class="action-btn primary">
+                    ✨ Generate Introduction with AI!
+                </button>
+                <button id="useCustomBtn" class="action-btn primary" style="margin-top: 10px;">
+                    📝 Use My Custom Introduction
+                </button>
+            </section>
+
+            <!-- Avatar Display Section -->
+            <section class="avatar-display">
+                <div class="avatar-container">
+                    <canvas id="avatarCanvas" width="300" height="300"></canvas>
+                    <div class="sparkle-container" id="sparkleContainer"></div>
+                </div>
+                
+                <div class="introduction-box" id="introductionBox">
+                    <h3>🌟 Your Introduction:</h3>
+                    <p id="introductionText" class="introduction-text">
+                        Click "Generate Introduction" to create your amazing introduction!
+                    </p>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="speakBtn" class="action-btn secondary" disabled>
+                        🔊 Make Avatar Speak
+                    </button>
+                    <button id="copyBtn" class="action-btn secondary" disabled>
+                        📋 Copy Text
+                    </button>
+                    <button id="downloadBtn" class="action-btn secondary" disabled>
+                        💾 Download Avatar Card
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Chat with AI Bot Section -->
+        <section class="chat-section">
+            <h2>💬 Chat with Your AI Friend!</h2>
+            <p class="chat-subtitle">Ask me anything and I'll help you! 😊</p>
+            
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            <p>Hi there! I'm your AI friend! Ask me anything you'd like to know! 😊</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-container">
+                    <input 
+                        type="text" 
+                        id="chatInput" 
+                        placeholder="Type your question here..." 
+                        maxlength="500"
+                    >
+                    <button id="sendChatBtn" class="chat-send-btn">
+                        <span>📤</span> Send
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div class="confetti-container" id="confettiContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
